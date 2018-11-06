@@ -170,7 +170,12 @@ class BankStatementsTotal(QtCore.QThread):
             df_mon = df_mon.to_period('M')
             df_mon['amountMoney'] = df_mon['amountMoney'].apply(lambda x: -x)
             # df_mon['月份'] = df_mon['transDate']
-            df_pivot = pd.pivot_table(df_mon, index=['transDate'], values=['amountMoney'], aggfunc=np.sum)
+            print(df_mon.columns)
+            print(df_mon)
+            df_mon_copy = df_mon.copy()
+            df_mon_copy['transDate'] = df_mon_copy.index
+            df
+            df_pivot = pd.pivot_table(df_mon_copy, index=['transDate'], values=['amountMoney'], aggfunc=np.sum)
             df_pivot["月份"] = df_pivot.index.strftime("%Y-%m")
             df_pivot = pd.DataFrame(df_pivot, columns=['月份', 'amountMoney'])
             df_pivot.set_index(keys='月份', inplace=True)
