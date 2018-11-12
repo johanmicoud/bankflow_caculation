@@ -1,7 +1,7 @@
 import pandas as pd
 from pandas import date_range
 
-ave_daily_balance_keyword_lst = ['结息', '利息', '季息']
+ave_daily_balance_keyword_lst = ['结息', '利息', '季息', '入息']
 # 生成3、6、9、12月21号到25号的字符串
 ms = ["%s" % x for x in range(3, 13, 3)]
 ds = ["%s" % x for x in range(21, 26)]
@@ -35,6 +35,7 @@ def ave_daily_balance_count(df):
     avg = df['amountMoney'].mean()
     ave_daily_balance = avg * 1100
     df_ave = pd.DataFrame([[ave_daily_balance]], columns=['日均存款余额'])
+
     return df_ave
 
 

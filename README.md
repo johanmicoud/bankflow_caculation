@@ -29,8 +29,9 @@
 ### 6 按月计算收入总和
 统计各月份有效流水的总和
 ### 7 日均存款余额
-每季度（3/6/9/12）21日-25日，“description”列中含“结息”、“利息”，“季息” 字样，且金额小于0，将四个季度结息金额算平均数后乘以1100，得出结果为日均存款余额
+每季度（3/6/9/12）21日-25日，“description”列中含"结息"、"利息"，“季息” ,"入息"字样，且金额小于0，将四个季度结息金额算平均数后乘以1100，得出结果为日均存款余额
 ## 二 打开和运行界面
+
 本程序依赖包如下：
 
 	openpyxl==2.2.5
@@ -53,7 +54,7 @@
 
 ### 1 打开界面， 执行【python run.py】或者【直接打开启动网银有效流水计算.bat】
 * 注意：linux系统 只能执行 python run.py
-### 安装依赖
+
 
 ![start_interface](screenshot/start_interface.jpg)
 ### 2 运行时界面
@@ -62,7 +63,9 @@
 ### 3 结果文件
 * 原流水标记sheeet:
 会将对有效流水的记录进行标记：将有效记录的amountMoney列标记为绿色
+
 ![result_all](screenshot/result_all.jpg)
+
 * 各月份有效流水统计
 
 ![result_month_total](screenshot/result_month_total.jpg)
@@ -70,7 +73,9 @@
 * 日均存款余额统计
 
 ![日均存款余额](screenshot/%E6%97%A5%E5%9D%87%E5%AD%98%E6%AC%BE%E4%BD%99%E9%A2%9D.jpg)
+
 * 客户信息
+
 ![result_client_info](screenshot/result_client_info.jpg)
 
 
